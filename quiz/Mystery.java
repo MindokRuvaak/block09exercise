@@ -1,4 +1,4 @@
-package DIT952.quiz;
+package quiz;
 
 /**
  * Created by Niklas on 2016-02-15.

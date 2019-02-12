@@ -1,6 +1,7 @@
-package DIT952.polygons;
+package polygons;
 
 import java.awt.*;
+
 
 /**
  * Created by Niklas on 2016-01-19.

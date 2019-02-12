@@ -1,7 +1,7 @@
-package DIT952.shapes;
+package shapes;
 
 import java.awt.*;
-import java.awt.List;
+import java.util.List;
 import java.util.*;
 
 /**
@@ -25,7 +25,7 @@ public class Triangle extends Shape {
         super(x,y);
     }
 
-    private java.util.List<Point> getCorners(){
+    private List<Point> getCorners(){
         // DIT952.polygons.Triangle has three corners
         java.util.List<Point> corners = new ArrayList<>(3);
 

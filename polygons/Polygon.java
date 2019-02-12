@@ -1,4 +1,4 @@
-package DIT952.polygons;
+package polygons;
 
 import javax.swing.*;
 import java.awt.*;
