@@ -17,7 +17,7 @@ public class Mystery {
                 q += 10 + l[z + 2];
                 z += 2;
             } else {
-                q += l[z] + + l[z + 1];
+                q += l[z] + l[z + 1];
                 z += 2;
             }
         }
