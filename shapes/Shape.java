@@ -2,8 +2,6 @@ package shapes;
 
 import javax.swing.*;
 import java.awt.*;
-// import java.util.*;
-// import java.util.List; //This is to avoid ambiguity for List
 
 /**
  * Created by Niklas on 2016-02-14.
