@@ -7,7 +7,7 @@ import java.util.*;
 /**
  * Created by Niklas on 2016-02-14.
  */
-public class Triangle extends Shape {
+public class Triangle extends Shape { // constructors are fine
     public Triangle(int x, int y, int sizeX, int sizeY, double rotation){
         super(x,y);
         this.scale(sizeX,sizeY);
@@ -34,9 +34,9 @@ public class Triangle extends Shape {
                 { 0,             -getScaleY()*58/100},
                 {-getScaleX()/2,  getScaleY()*29/100},
                 { getScaleX()/2,  getScaleY()*29/100}
-        };
+        };// TODO: Functional decomposition
 
-        for (int i = 0; i < 3; i++){
+        for (int i = 0; i < 3; i++){ // TODO: functionaldecomposition
             // start from center, find corner
             Point newCorner = new Point(center.x+offsets[i][0], center.y+offsets[i][1]);
 
@@ -52,8 +52,8 @@ public class Triangle extends Shape {
         return corners;
     }
 
-    public void paint(Graphics g){
-        java.util.List<Point> corners = getCorners();
+    public void paint(Graphics g){ // implementation independent of specific shape, can be moved to Shape class
+        /* List<Point> corners = getCorners();
         // first and last point should be the same
         corners.add(corners.get(0));
         Point from = null;
@@ -61,6 +61,13 @@ public class Triangle extends Shape {
             if (from != null){
                 g.drawLine(from.x, from.y, to.x, to.y);
             }
+            from = to;
+        } */
+        // better
+        List<Point> corners = getCorners();
+        Point from = corners.getLast();
+        for (Point to : corners){
+            g.drawLine(from.x, from.y, to.x, to.y);
             from = to;
         }
 

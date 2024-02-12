@@ -6,7 +6,7 @@ import java.awt.*;
 /**
  * Created by Niklas on 2016-02-14.
  */
-public abstract class Shape extends JComponent {
+public abstract class Shape extends JComponent { // alla väldefinerade
     private Point centerPoint;
     private int scaleX = 10;
     private int scaleY = 10;
@@ -28,6 +28,7 @@ public abstract class Shape extends JComponent {
         return rotation;
     }
 
+    // why?
     private Shape(Point center){
         this.centerPoint = center;
    }
@@ -49,6 +50,12 @@ public abstract class Shape extends JComponent {
         this.rotation = rotation + angle;
     }
 
+    //  make "getCorners a ?private? method and define paint specifics here"
+    // inside getCorners: functional decomposition call abstract "getCornerOffset()" method and
+    // private calculate corner points using cornerOffsetArray and rotation
     public abstract void paint(Graphics g);
+    // would personally like a "paintableShape" class that "Has-a" Shape and handles the painting 
+    //or a "ShapePainter" class with static paint method taking a shape? then JComponent cependency can 
+    // be entirely be handled through this class which acts as a "bridge" between the Shape module and swing
 
 }

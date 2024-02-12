@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Created by Niklas on 2016-02-14.
  */
-public class Rectangle extends Shape {
+public class Rectangle extends Shape { // for comments, see Triangle, same applies here
 
     public Rectangle(int x, int y, int sizeX, int sizeY, double rotation){
         super(x,y);
@@ -57,7 +57,7 @@ public class Rectangle extends Shape {
     }
 
     public void paint(Graphics g){
-        List<Point> corners = getCorners();
+        /* List<Point> corners = getCorners();
         // first and last point should be the same
         corners.add(corners.get(0));
         Point from = null;
@@ -65,6 +65,13 @@ public class Rectangle extends Shape {
             if (from != null){
                 g.drawLine(from.x, from.y, to.x, to.y);
             }
+            from = to;
+        } */
+        // better
+        List<Point> corners = getCorners();
+        Point from = corners.getLast();
+        for (Point to : corners){
+            g.drawLine(from.x, from.y, to.x, to.y);
             from = to;
         }
 
